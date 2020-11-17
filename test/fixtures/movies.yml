@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  impression: MyText
+  evaluation: 1
+  user_id: 1
+
+two:
+  impression: MyText
+  evaluation: 1
+  user_id: 1
