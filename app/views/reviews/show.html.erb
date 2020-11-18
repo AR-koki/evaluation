@@ -7,19 +7,20 @@
 <section class="book-content col-md-6 col-xs-12">
   <div class="book-title-frame">
     <div class="book-title-block">
+      <h2>タイトル</h2>
       <%= @review.name %>
     </div>
   </div>
   <div class="book-attribute-frame">
-    <h2>11</h2>
+    <h2>著者</h2>
     <div class="book-author">
       <%= @review.author %>
     </div>
   </div>
   <div class="book-content">
-    <h2>11</h2>
+    <h2>紹介</h2>
     <%= simple_format (@review.introduction) %>
-    <h2>11</h2>
+    <h2>感想</h2>
     <%= simple_format (@review.review) %>
   </div>
 </section>
