@@ -1,0 +1,26 @@
+<section class="book-images-frame col-md-3 col-xs-12">
+  <% if @review.image_url? %>
+    <%= image_tag "#{@review.image_url}",class: "book-images-cover",style:"height:200px;width:150px;" %>
+  <% else %>
+    <%= image_tag "no_image.jpg",class: "book-images-cover",style:"height:200px;width:150px;" %>
+  <% end %>
+</section>
+<section class="book-content col-md-6 col-xs-12">
+  <div class="book-title-frame">
+    <div class="book-title-block">
+      <%= @review.name %>
+    </div>
+  </div>
+  <div class="book-attribute-frame">
+    <h2>11</h2>
+    <div class="book-author">
+      <%= @review.author %>
+    </div>
+  </div>
+  <div class="book-content">
+    <h2>11</h2>
+    <%= simple_format (@review.introduction) %>
+    <h2>11</h2>
+    <%= simple_format (@review.review) %>
+  </div>
+</section>
