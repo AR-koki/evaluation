@@ -39,6 +39,22 @@
     詳細：<textarea id="description" type="text" name="description" value="" ></textarea>
 </div>
 
+<div>
+    <%= form_with model:@review do |f| %>
+        <p>タイトル</p><br>
+        <%= f.text_field :name ,{ id: "title2", type: "text2", name: "title2", value: "" } %><br>
+        <p>著者</p><br>
+        <%= f.text_field :author %><br>
+        <p>紹介</p><br>
+        <%= f.text_area :introduction %><br>
+        <p>画像</p><br>
+        <%= f.text_field :image_url %><br>
+        <p>感想</p><br>
+        <%= f.text_area :review %><br>
+        <%= f.submit "投稿" %><br>
+    <% end %>
+</div>
+
 <script>
     $(function() {
         $('#getBookInfo').click( function( e ) {
