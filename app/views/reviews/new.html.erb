@@ -42,7 +42,7 @@
 <div>
     <%= form_with model:@review do |f| %>
         <p>タイトル</p><br>
-        <%= f.text_field :name ,{ id: "title2", type: "text2", name: "title2", value: "" } %><br>
+        <%= f.text_field :name %></div><br>
         <p>著者</p><br>
         <%= f.text_field :author %><br>
         <p>紹介</p><br>
@@ -72,13 +72,17 @@
                         $("#thumbnail").html('<img src=\"' + data[0].summary.cover + '\" style=\"border:solid 1px #000000\" />');
                     }
                     $("#title").val(data[0].summary.title);
+                    $("#review_name").val(data[0].summary.title);
                     $("#publisher").val(data[0].summary.publisher);
                     $("#volume").val(data[0].summary.volume);
                     $("#series").val(data[0].summary.series);
                     $("#author").val(data[0].summary.author);
+                    $("#review_author").val(data[0].summary.author);
                     $("#pubdate").val(data[0].summary.pubdate);
                     $("#cover").val(data[0].summary.cover);
+                    $("#review_image_url").val(data[0].summary.cover);
                     $("#description").val(data[0].onix.CollateralDetail.TextContent[0].Text);
+                    $("#review_introduction").val(data[0].onix.CollateralDetail.TextContent[0].Text);
                 }
             });
         });

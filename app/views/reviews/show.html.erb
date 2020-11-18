@@ -2,7 +2,6 @@
   <% if @review.image_url? %>
     <%= image_tag "#{@review.image_url}",class: "book-images-cover",style:"height:200px;width:150px;" %>
   <% else %>
-    <%= image_tag "no_image.jpg",class: "book-images-cover",style:"height:200px;width:150px;" %>
   <% end %>
 </section>
 <section class="book-content col-md-6 col-xs-12">

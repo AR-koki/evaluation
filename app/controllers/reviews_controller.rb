@@ -4,10 +4,6 @@ class ReviewsController < ApplicationController
     end
     def new
         @review = Review.new
-        respond_to do |format|
-          format.html
-          format.json
-          end
     end
     def create
         @review = Review.new(review_params)
