@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_051711) do
     t.text "review"
     t.string "image_url"
     t.text "introduction"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
