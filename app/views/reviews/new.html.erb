@@ -50,21 +50,7 @@
         <p>画像</p><br>
         <%= f.text_field :image_url %><br>
         <p>評価</p>
-        <div class="wrap">
-            <span class="glyphicon glyphicon-star-empty rate-0"></span>
-            <span class="glyphicon glyphicon-star rate0"></span>
-            <span class="glyphicon glyphicon-star-empty rate-1"></span>
-            <span class="glyphicon glyphicon-star rate1"></span>
-            <span class="glyphicon glyphicon-star-empty rate-2"></span>
-            <span class="glyphicon glyphicon-star rate2"></span>
-            <span class="glyphicon glyphicon-star-empty rate-3"></span>
-            <span class="glyphicon glyphicon-star rate3"></span>
-            <span class="glyphicon glyphicon-star-empty rate-4"></span>
-            <span class="glyphicon glyphicon-star rate4"></span>
-            <span class="glyphicon glyphicon-star-empty rate-5"></span>
-            <span class="glyphicon glyphicon-star rate5"></span>
-        </div>
-        <%= f.select :rate, [["星1","1"],["星2","2"],["星3","3"],["星4","4"],["星5","5"]] %>
+        <%= f.select :rate, {'星1':1,'星2':2,'星3':3,'星4':4,'星5':5} %>
         <p>感想</p><br>
         <%= f.text_area :review %><br>
         <%= f.submit "投稿" %><br>
@@ -101,11 +87,6 @@
                     $("#review_introduction").val(data[0].onix.CollateralDetail.TextContent[0].Text);
                 }
             });
-        });
-
-        $('#review_rate select[name="review[rate]"]').change(function(){
-            if ($('select[name=review[rate]]').val() == "1")
-                $('.wrap').css('display','none');
         });
     });
 </script>

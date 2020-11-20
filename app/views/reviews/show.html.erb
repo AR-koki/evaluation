@@ -20,6 +20,14 @@
   <div class="book-content">
     <h2>紹介</h2>
     <%= simple_format (@review.introduction) %>
+    <h2>評価</h2>
+    <% if @review.rate = 1 %>
+      1
+    <% elsif @review.rate = 2 %>
+      2
+    <% else %>
+      未回答
+    <% end %>
     <h2>感想</h2>
     <%= simple_format (@review.review) %>
   </div>
