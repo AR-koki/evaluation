@@ -1,46 +1,57 @@
 <div class="container">
 	<div>
+		<table border="1" width="650">
+		<tr>
+			<th width="200">タイトル</th>
+			<th width="150">評価</th>
+			<th width="100"></th>
+			<th width="100"></th>
+			<th width="100"></th>
+		</tr>
 		<% @reviews.each do |review| %>
-			<div class="row">
-			<%= review.name %>
-			<% if review.rate == "1" %>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		    <% elsif review.rate == "2" %>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		    <% elsif review.rate == "3" %>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		    <% elsif review.rate == "4" %>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		    <% elsif review.rate == "5" %>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		    <% else %>
-		      未回答
-			<% end %>
-			<%= link_to "詳細", review_path(review) %>
-			<%= link_to "編集", edit_review_path(review) %>
-			<%= link_to "削除", review_path(review), method: :delete %>
-			</div>
+			<tr>
+				<td><%= review.name %></td>
+				<td>
+					<% if review.rate == "1" %>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				    <% elsif review.rate == "2" %>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				    <% elsif review.rate == "3" %>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				    <% elsif review.rate == "4" %>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				    <% elsif review.rate == "5" %>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				    <% else %>
+				      未回答
+					<% end %>
+				</td>
+				<td><%= link_to "詳細", review_path(review) %></td>
+				<td><%= link_to "編集", edit_review_path(review) %></td>
+				<td><%= link_to "削除", review_path(review), method: :delete %></td>
+			</tr>
 		<% end %>
+	</table>
 	</div>
 	<div class="row">
 		<%= link_to "新規投稿", new_review_path %>
