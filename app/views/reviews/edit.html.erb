@@ -1,0 +1,19 @@
+<div class="container">
+	<div>
+		<%= form_with model:@review do |f| %>
+			<div class=row>タイトル</div>
+			<div class=row><%= f.text_field :name %></div>
+			<div class=row>著者</div>
+			<div class=row><%= @review.author %></div>
+			<div class=row>紹介</div>
+			<div class=row><%= f.text_area :introduction %></div>
+			<div class=row>画像URL</div>
+			<div class=row><%= @review.image_url %></div>
+			<div class=row>評価</div>
+			<div class=row><%= f.select :rate, {'星1':1,'星2':2,'星3':3,'星4':4,'星5':5} %></div>
+			<div class=row>感想</div>
+			<div class=row><%= f.text_area :review %></div>
+			<div class=row><%= f.submit "更新" %></div>
+		<% end %>
+	</div>
+</div>

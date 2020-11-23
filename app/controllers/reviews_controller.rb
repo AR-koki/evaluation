@@ -17,17 +17,17 @@ class ReviewsController < ApplicationController
         end
     end
     def edit
-      @review = Review.find(parans[:id])
+      @review = Review.find(params[:id])
     end
     def update
       @review = Review.find(params[:id])
       @review.update(review_params)
-      redairect_to review_path(@review)
+      redirect_to review_path(@review)
     end
     def destroy
       review = Review.find(params[:id])
       review.destroy
-      redairect_to reviews_path
+      redirect_to reviews_path
     end
 
     def review_params
