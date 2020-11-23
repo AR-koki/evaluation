@@ -57,4 +57,5 @@
     <h2>感想</h2>
     <%= simple_format (@review.review) %>
   </div>
+  <div class="row"><%= link_to "一覧",reviews_path %>/<%= link_to "削除",review_path(@review),method: :delete %></div>
 </section>
